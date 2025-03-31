@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WindowsFormsApp1.Properties {
+namespace WinFormsApp1.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -25,37 +25,13 @@ namespace WindowsFormsApp1.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string firstNum {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string sstring {
             get {
-                return ((string)(this["firstNum"]));
+                return ((string)(this["sstring"]));
             }
             set {
-                this["firstNum"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string secondNum {
-            get {
-                return ((string)(this["secondNum"]));
-            }
-            set {
-                this["secondNum"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public string thirdNum {
-            get {
-                return ((string)(this["thirdNum"]));
-            }
-            set {
-                this["thirdNum"] = value;
+                this["sstring"] = value;
             }
         }
     }

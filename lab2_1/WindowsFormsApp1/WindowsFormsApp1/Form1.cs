@@ -1,13 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +8,20 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
+            this.FormClosing += Form1_FormClosing;
+            // Загружаем сохранённые значения из настроек
+            firstNum.Text = Properties.Settings.Default.firstNum;
+            secondNum.Text = Properties.Settings.Default.secondNum;
+            thirdNum.Text = Properties.Settings.Default.thirdNum;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Сохраняем введённые пользователем значения
+            Properties.Settings.Default.firstNum = firstNum.Text;
+            Properties.Settings.Default.secondNum = secondNum.Text;
+            Properties.Settings.Default.thirdNum = thirdNum.Text;
+            Properties.Settings.Default.Save();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -30,16 +36,16 @@ namespace WindowsFormsApp1
                 // Вызываем метод сортировки
                 var (max, mid, min) = Logic.GetSorted(first, second, third);
 
-                // Выводим результат в Label
+                // Выводим результат
                 MessageBox.Show($"Наибольшее: {max}, Среднее: {mid}, Наименьшее: {min}");
             }
-
             catch (FormatException)
             {
                 MessageBox.Show("Введите корректные целые числа!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
+
     public static class Logic
     {
         public static (int max, int mid, int min) GetSorted(int first, int second, int third)
